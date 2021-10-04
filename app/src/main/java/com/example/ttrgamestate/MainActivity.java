@@ -12,6 +12,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TTRGameState gs= new TTRGameState();
+
+
+
+
+
         //TTRGameState. p = TTRGameState.;
 
     }

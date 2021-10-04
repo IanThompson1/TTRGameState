@@ -3,12 +3,18 @@ package com.example.ttrgamestate;
 public class Path {
 
     public enum color{
-        green,
+        pinkPath,
+        orangePath,
+        blackPath,
+        whitePath,
+        grayPath,
     }
 
     public enum owner{
-        empty,
-        player1,
+        redPlayer,
+        greenPlayer,
+        yellowPlayer,
+        bluePlayer,
     }
 
     private int length;

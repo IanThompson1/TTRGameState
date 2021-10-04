@@ -1,16 +1,27 @@
 package com.example.ttrgamestate;
+import java.util.ArrayList;
 
 public class TTRGameState{
 
+    public enum card{
+        whiteCard,
+        blackCard,
+        pinkCard,
+        orangeCard,
+        wildCard,
+    }
+
     public enum path{
-        placeplace,
+        portlandToSalem,
         placedestination,
 
     }
 
+    private ArrayList<path> allPaths;
+
+
     private int numPlayers;
-    private int numTrains;
-    private
+
 
     public TTRGameState(){
 
@@ -24,8 +35,16 @@ public class TTRGameState{
     public boolean placeTrains(path p, Path.owner own){
 
         switch(p){
-            case placeplace:
+            case portlandToSalem:
+                System.out.println("PtoS");
+                return true;
         }
         return false;
     }
+
+    public String toString(){
+        return "hi";
+    }
+
+
 }
