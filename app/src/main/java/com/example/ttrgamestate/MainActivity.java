@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         TTRGameState gs= new TTRGameState();
 
-
+        TTRGameState gameState = new TTRGameState();
 
 
 

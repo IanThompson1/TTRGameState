@@ -1,24 +1,25 @@
 package com.example.ttrgamestate;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TTRGameState{
 
-    public enum card{
-        whiteCard,
-        blackCard,
-        pinkCard,
-        orangeCard,
-        wildCard,
+    public enum CARD{
+        WHITECARD,
+        BLACKCARD,
+        PINKCARD,
+        ORANGECARD,
+        WILDCARD,
     }
 
-    public enum path{
-        portlandToSalem,
-        placedestination,
+    public int whosTurn;
 
-    }
+    private ArrayList<Path> allPaths;
+    private ArrayList<Player> allPlayers;
 
-    private ArrayList<path> allPaths;
-
+    private ArrayList<CARD> cardDeck;
+    private ArrayList<CARD> faceUp;
+    private ArrayList<Ticket> ticketDeck;
 
     private int numPlayers;
 
@@ -32,15 +33,7 @@ public class TTRGameState{
         // same number of :new”s
     }
 
-    public boolean placeTrains(path p, Path.owner own){
 
-        switch(p){
-            case portlandToSalem:
-                System.out.println("PtoS");
-                return true;
-        }
-        return false;
-    }
 
     public String toString(){
         return "hi";
