@@ -1,6 +1,7 @@
 package com.example.ttrgamestate;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TTRGameState{
 
@@ -157,6 +158,36 @@ public class TTRGameState{
                 //four players
                 allPlayers.add(new Player(3));
             }
+        }
+
+
+        /**
+         * Card face up and down deck
+         *
+         */
+        cardDeck = new ArrayList<CARD>();
+        faceUp = new ArrayList<CARD>();
+        for (int i = 0; i < 12; i++) {
+            cardDeck.add(CARD.ORANGECARD);
+        }
+        for (int i = 0; i < 12; i++) {
+            cardDeck.add(CARD.PINKCARD);
+        }
+        for (int i = 0; i < 12; i++) {
+            cardDeck.add(CARD.BLACKCARD);
+        }
+        for (int i = 0; i < 12; i++) {
+            cardDeck.add(CARD.WHITECARD);
+        }
+        for (int i = 0; i < 14; i++) {
+            cardDeck.add(CARD.WILDCARD);
+        }
+        Collections.shuffle(cardDeck);
+
+        //sets up face up card deck
+        for (int i = 0; i < 5; i++){
+            faceUp.add(cardDeck.get(0));
+            cardDeck.remove(0);
         }
 
 

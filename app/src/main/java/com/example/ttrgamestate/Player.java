@@ -20,7 +20,6 @@ public class Player {
 
     public Player(int playerNum){
         color = playerNum;
-
     }
 
 }
