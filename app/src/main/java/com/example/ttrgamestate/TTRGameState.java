@@ -160,8 +160,22 @@ public class TTRGameState{
         }
 
 
-        //create tickets
-        ticketDeck.add(new Ticket(0,"Portland","Salem"));
+        //create ticket deck
+        ticketDeck = new ArrayList<Ticket>();
+        ticketDeck.add(new Ticket(8,CITY.ASTORIA,CITY.LAGRANDE));
+        ticketDeck.add(new Ticket(5,CITY.ASTORIA,CITY.COOSBAY));
+        ticketDeck.add(new Ticket(5,CITY.TILLAMOOK,CITY.BEND));
+        ticketDeck.add(new Ticket(7,CITY.TILLAMOOK,CITY.GPASS));
+        ticketDeck.add(new Ticket(6,CITY.PENDLETON,CITY.SALEM));
+        ticketDeck.add(new Ticket(8,CITY.EUGENE,CITY.LAKEVIEW));
+        ticketDeck.add(new Ticket(8,CITY.THEDALLES,CITY.KFALLS));
+        ticketDeck.add(new Ticket(9,CITY.NEWPORT,CITY.BURNS));
+        ticketDeck.add(new Ticket(5,CITY.PORTLAND,CITY.BEND));
+        ticketDeck.add(new Ticket(5,CITY.ROSEBURG,CITY.PORTLAND));
+        ticketDeck.add(new Ticket(10,CITY.PENDLETON,CITY.KFALLS));
+        ticketDeck.add(new Ticket(13,CITY.LAGRANDE,CITY.GPASS));
+        ticketDeck.add(new Ticket(6,CITY.COOSBAY,CITY.BEND));
+
 
     }
 

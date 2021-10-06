@@ -18,6 +18,5 @@ public class MainActivity extends AppCompatActivity {
 
 
         //TTRGameState. p = TTRGameState.;
-
     }
 }

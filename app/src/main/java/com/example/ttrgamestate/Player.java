@@ -5,22 +5,21 @@ import java.util.ArrayList;
 public class Player {
 
 
-    public enum OWNER{
-        REDPLAYER,
-        GREENPLAYER,
-        YELLOWPLAYER,
-        BLUEPLAYER,
-    }
+//    public enum OWNER{
+//        REDPLAYER,
+//        GREENPLAYER,
+//        YELLOWPLAYER,
+//        BLUEPLAYER,
+//    }
 
     private int numTrains;
     private ArrayList<TTRGameState.CARD> cardHand;
     private ArrayList<Ticket> tickets;
-    private int color;  //name
+    private int name;  //name
 
 
     public Player(int playerNum){
-        color = playerNum;
-
+        name = playerNum;
     }
 
 }
