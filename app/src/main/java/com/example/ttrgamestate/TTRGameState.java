@@ -208,7 +208,6 @@ public class TTRGameState{
 
 
         //create tickets
-        ticketDeck.add(new Ticket(0,"Portland","Salem"));
 
     }
 
