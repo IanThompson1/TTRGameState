@@ -28,5 +28,25 @@ public class Path {
 
     }
 
+    public int getLength(){
+        return length;
+    }
+
+    public TTRGameState.CITY getNode0(){
+        return node0;
+    }
+
+    public TTRGameState.CITY getNode1(){
+        return node1;
+    }
+
+    public COLOR getPathColor(){
+        return pathColor;
+    }
+
+    public int getPathOwner(){
+        return pathOwner;
+    }
+
 
 }

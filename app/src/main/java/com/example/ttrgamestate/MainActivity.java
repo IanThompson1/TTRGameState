@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
         TTRGameState gameState = new TTRGameState(2);
 
-
+        //MultilineText text = new MultilineText
+        String test = gameState.toString();
+        System.out.println(test);
 
         //TTRGameState. p = TTRGameState.;
     }

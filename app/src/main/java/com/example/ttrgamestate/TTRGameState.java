@@ -55,6 +55,7 @@ public class TTRGameState{
          * Path(length, node0, node1, color, owner)
          */
         //orange paths
+        allPaths = new ArrayList<Path>();
         allPaths.add(new Path(1, CITY.ASTORIA, CITY.TILLAMOOK,
                 Path.COLOR.ORANGEPATH, -1));
         allPaths.add(new Path(2, CITY.PORTLAND, CITY.THEDALLES,
@@ -148,6 +149,7 @@ public class TTRGameState{
          * Creates all players
          * Player(playerNum)
          */
+        allPlayers = new ArrayList<Player>();
         allPlayers.add(new Player(0));
         allPlayers.add(new Player(1));
 
@@ -220,7 +222,17 @@ public class TTRGameState{
 
 
     public String toString(){
-        return "hi";
+        String output = "";
+        for(Path current: allPaths) {
+            output += current.getLength() + "\t";
+            output += current.getNode0().name() + "\t";
+            output += current.getNode1().name() + "\t";
+            output += current.getPathColor().name() + "\t";
+            output += current.getPathOwner() + "\t\n";
+            //Integer.toString (possibly need for integers)
+        }
+        System.out.println(output);
+        return output;
     }
 
 
