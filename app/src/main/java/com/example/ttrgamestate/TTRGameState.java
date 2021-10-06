@@ -12,6 +12,25 @@ public class TTRGameState{
         WILDCARD,
     }
 
+    public enum CITY{
+        ASTORIA,
+        TILLAMOOK,
+        NEWPORT,
+        COOSBAY,
+        PORTLAND,
+        SALEM,
+        EUGENE,
+        ROSEBURG,
+        GPASS,
+        THEDALLES,
+        BEND,
+        KFALLS,
+        PENDLETON,
+        LAGRANDE,
+        BURNS,
+        LAKEVIEW
+    }
+
     public int whosTurn;
 
     private ArrayList<Path> allPaths;
@@ -52,7 +71,8 @@ public class TTRGameState{
         }
 
 
-        //create all
+        //create tickets
+        ticketDeck.add(new Ticket(0,"Portland","Salem"));
 
     }
 
