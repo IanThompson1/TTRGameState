@@ -24,13 +24,42 @@ public class TTRGameState{
     private int numPlayers;
 
 
-    public TTRGameState(){
+    public TTRGameState(int inNumPlayers){
+
+        //set number of players
+        numPlayers = inNumPlayers;
+        whosTurn = 0;
+
+        /**
+         * create all paths
+         */
+        //orange paths
+        allPaths.add(new Path(1, "Astoria", "Tillamook", Path.COLOR.ORANGEPATH, -1));
+
+
+
+        //create all players
+        allPlayers.add(new Player(0));
+        allPlayers.add(new Player(1));
+
+        if (numPlayers > 2){
+            //3 players
+            allPlayers.add(new Player(2));
+            if (numPlayers == 4){
+                //four players
+                allPlayers.add(new Player(3));
+            }
+        }
+
+
+        //create all
 
     }
 
     public TTRGameState(TTRGameState other){
         //copies everything
-        // same number of :new”s
+        // same number of :new's
+
     }
 
 

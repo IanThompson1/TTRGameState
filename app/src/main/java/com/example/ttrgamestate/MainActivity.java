@@ -11,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TTRGameState gs= new TTRGameState();
+        TTRGameState gs= new TTRGameState(2);
 
-        TTRGameState gameState = new TTRGameState();
+        TTRGameState gameState = new TTRGameState(2);
 
 
 
