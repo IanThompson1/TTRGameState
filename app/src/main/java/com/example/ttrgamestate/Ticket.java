@@ -13,4 +13,21 @@ public class Ticket {
         node0 = n0;
         node1 = n1;
     }
+
+    public boolean getIsComplete(){
+        return isComplete;
+    }
+
+    public int getPointValue(){
+        return PointValue;
+    }
+
+    public TTRGameState.CITY getNode0(){
+        return node0;
+    }
+
+    public TTRGameState.CITY getNode1(){
+        return node1;
+    }
+
 }

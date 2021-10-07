@@ -36,6 +36,14 @@ public class TTRGameState{
 
     private ArrayList<Path> allPaths;
     private ArrayList<Player> allPlayers;
+    private ArrayList<CARD> cards0;
+    private ArrayList<CARD> cards1;
+    private ArrayList<CARD> cards2;
+    private ArrayList<CARD> cards3;
+    private ArrayList<Ticket> tickets0;
+    private ArrayList<Ticket> tickets1;
+    private ArrayList<Ticket> tickets2;
+    private ArrayList<Ticket> tickets3;
 
     private ArrayList<CARD> cardDeck;
     private ArrayList<CARD> faceUp;
@@ -150,15 +158,24 @@ public class TTRGameState{
          * Player(playerNum)
          */
         allPlayers = new ArrayList<Player>();
-        allPlayers.add(new Player(0));
-        allPlayers.add(new Player(1));
+        cards0 = new ArrayList<CARD>();
+        cards1 = new ArrayList<CARD>();
+        tickets0 = new ArrayList<Ticket>();
+        tickets1 = new ArrayList<Ticket>();
+
+        allPlayers.add(new Player(0, cards0, tickets0,20));
+        allPlayers.add(new Player(1, cards1, tickets1, 20));
 
         if (numPlayers > 2){
             //3 players
-            allPlayers.add(new Player(2));
+            cards2 = new ArrayList<CARD>();
+            tickets2 = new ArrayList<Ticket>();
+            allPlayers.add(new Player(2, cards2, tickets2,20));
             if (numPlayers == 4){
                 //four players
-                allPlayers.add(new Player(3));
+                cards3 = new ArrayList<CARD>();
+                tickets3 = new ArrayList<Ticket>();
+                allPlayers.add(new Player(3, cards3, tickets3, 20));
             }
         }
 
@@ -223,15 +240,49 @@ public class TTRGameState{
 
     public String toString(){
         String output = "";
+        //strings for the paths
+        output += "length\tnode0\tnode1\tpath color\tpath owner\n";
         for(Path current: allPaths) {
             output += current.getLength() + "\t";
             output += current.getNode0().name() + "\t";
             output += current.getNode1().name() + "\t";
             output += current.getPathColor().name() + "\t";
             output += current.getPathOwner() + "\t\n";
-            //Integer.toString (possibly need for integers)
         }
-        System.out.println(output);
+
+        //strings for the tickets
+        output += "is complete\tpoint value\tnode0\tnode1\n";
+        for(Ticket current: ticketDeck){
+            output += current.getIsComplete() + "\t";
+            output += current.getPointValue() + "\t";
+            output += current.getNode0().name() + "\t";
+            output += current.getNode1().name() + "\t\n";
+        }
+
+        //strings for the players
+        output += "player name\ttrains left\n";
+        for(Player current: allPlayers) {
+            output += current.getName() + "\t";
+            output += current.getNumTrains() + "\t\n";
+
+            //string for players tickets
+            output += "TICKETS:\t";
+            for (Ticket tik : current.getTickets()) {
+                output += tik.getIsComplete() + "\t";
+                output += tik.getPointValue() + "\t";
+                output += tik.getNode0().name() + "\t";
+                output += tik.getNode1().name() + "\t";
+            }
+            output += "\n";
+
+            //string for players cards
+            output += "CARDS:\t";
+            for(CARD card:current.getCardHand()){
+                output += card.name() + "\t";
+            }
+            output += "\n";
+        }
+
         return output;
     }
 

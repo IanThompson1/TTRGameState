@@ -18,8 +18,27 @@ public class Player {
     private int name;  //name
 
 
-    public Player(int playerNum){
+    public Player(int playerNum, ArrayList<TTRGameState.CARD> cards, ArrayList<Ticket> tickets, int trains){
         name = playerNum;
+        cardHand = cards;
+        this.tickets = tickets;
+        numTrains = trains;
+    }
+
+    public int getNumTrains(){
+        return numTrains;
+    }
+
+    public int getName(){
+        return name;
+    }
+
+    public ArrayList<TTRGameState.CARD> getCardHand(){
+        return cardHand;
+    }
+
+    public ArrayList<Ticket> getTickets(){
+        return tickets;
     }
 
 }
