@@ -202,6 +202,30 @@ public class TTRGameState{
 
     }
 
+    //getter method for cardDeck
+    public ArrayList<CARD> getCardDeck() {
+        return cardDeck;
+    }
+
+    //setter method for cardDeck
+    public void setCardDeck(ArrayList<CARD> cardDeck1){
+        cardDeck.clear();
+        cardDeck.addAll(cardDeck1);
+    }
+
+    public Ticket[] getTickets(){
+        Ticket[] tickets = new Ticket[3];
+        for(int i = 0; i < 3; i++){
+            tickets[i] = ticketDeck.get(i);
+            ticketDeck.remove(i);
+        }
+        return tickets;
+    }
+
+    public boolean ticketDeckEmpty(){
+        return ticketDeck.isEmpty();
+    }
+
 
 
     public String toString(){

@@ -28,5 +28,19 @@ public class Path {
 
     }
 
+    public int getPathOwner() {
+        return pathOwner;
+    }
 
+    public COLOR getPathColor() {
+        return pathColor;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setPathOwner(int owner){
+        pathOwner = owner;
+    }
 }
