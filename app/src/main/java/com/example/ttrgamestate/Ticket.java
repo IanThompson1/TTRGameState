@@ -1,5 +1,5 @@
 package com.example.ttrgamestate;
-
+//ticket class implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 
 public class Ticket {
     private int PointValue;

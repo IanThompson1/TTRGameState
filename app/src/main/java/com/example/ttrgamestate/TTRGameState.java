@@ -2,7 +2,7 @@ package com.example.ttrgamestate;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
-
+//ticket to ride game state implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 public class TTRGameState{
 
     public enum CARD{

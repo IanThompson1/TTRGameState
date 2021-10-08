@@ -1,5 +1,5 @@
 package com.example.ttrgamestate;
-
+//path class implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 public class Path {
 
     public enum COLOR{

@@ -1,5 +1,5 @@
 package com.example.ttrgamestate;
-
+//main view implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;

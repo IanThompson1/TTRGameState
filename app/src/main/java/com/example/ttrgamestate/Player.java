@@ -1,6 +1,6 @@
 package com.example.ttrgamestate;
 import java.util.ArrayList;
-
+//player class implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 
 public class Player {
 
