@@ -2,7 +2,7 @@ package com.example.ttrgamestate;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
-
+//ticket to ride game state implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 public class TTRGameState{
 
     public enum CARD{
@@ -36,6 +36,14 @@ public class TTRGameState{
 
     private ArrayList<Path> allPaths;
     private ArrayList<Player> allPlayers;
+    private ArrayList<CARD> cards0;
+    private ArrayList<CARD> cards1;
+    private ArrayList<CARD> cards2;
+    private ArrayList<CARD> cards3;
+    private ArrayList<Ticket> tickets0;
+    private ArrayList<Ticket> tickets1;
+    private ArrayList<Ticket> tickets2;
+    private ArrayList<Ticket> tickets3;
 
     private ArrayList<CARD> cardDeck;
     private ArrayList<CARD> faceUp;
@@ -55,6 +63,7 @@ public class TTRGameState{
          * Path(length, node0, node1, color, owner)
          */
         //orange paths
+        allPaths = new ArrayList<Path>();
         allPaths.add(new Path(1, CITY.ASTORIA, CITY.TILLAMOOK,
                 Path.COLOR.ORANGEPATH, -1));
         allPaths.add(new Path(2, CITY.PORTLAND, CITY.THEDALLES,
@@ -148,18 +157,44 @@ public class TTRGameState{
          * Creates all players
          * Player(playerNum)
          */
-        allPlayers.add(new Player(0));
-        allPlayers.add(new Player(1));
+        allPlayers = new ArrayList<Player>();
+        cards0 = new ArrayList<CARD>();
+        cards1 = new ArrayList<CARD>();
+        tickets0 = new ArrayList<Ticket>();
+        tickets1 = new ArrayList<Ticket>();
+
+        allPlayers.add(new Player(0, cards0, tickets0,20));
+        allPlayers.add(new Player(1, cards1, tickets1, 20));
 
         if (numPlayers > 2){
             //3 players
-            allPlayers.add(new Player(2));
+            cards2 = new ArrayList<CARD>();
+            tickets2 = new ArrayList<Ticket>();
+            allPlayers.add(new Player(2, cards2, tickets2,20));
             if (numPlayers == 4){
                 //four players
-                allPlayers.add(new Player(3));
+                cards3 = new ArrayList<CARD>();
+                tickets3 = new ArrayList<Ticket>();
+                allPlayers.add(new Player(3, cards3, tickets3, 20));
             }
         }
 
+
+        //create ticket deck
+        ticketDeck = new ArrayList<Ticket>();
+        ticketDeck.add(new Ticket(8,CITY.ASTORIA,CITY.LAGRANDE));
+        ticketDeck.add(new Ticket(5,CITY.ASTORIA,CITY.COOSBAY));
+        ticketDeck.add(new Ticket(5,CITY.TILLAMOOK,CITY.BEND));
+        ticketDeck.add(new Ticket(7,CITY.TILLAMOOK,CITY.GPASS));
+        ticketDeck.add(new Ticket(6,CITY.PENDLETON,CITY.SALEM));
+        ticketDeck.add(new Ticket(8,CITY.EUGENE,CITY.LAKEVIEW));
+        ticketDeck.add(new Ticket(8,CITY.THEDALLES,CITY.KFALLS));
+        ticketDeck.add(new Ticket(9,CITY.NEWPORT,CITY.BURNS));
+        ticketDeck.add(new Ticket(5,CITY.PORTLAND,CITY.BEND));
+        ticketDeck.add(new Ticket(5,CITY.ROSEBURG,CITY.PORTLAND));
+        ticketDeck.add(new Ticket(10,CITY.PENDLETON,CITY.KFALLS));
+        ticketDeck.add(new Ticket(13,CITY.LAGRANDE,CITY.GPASS));
+        ticketDeck.add(new Ticket(6,CITY.COOSBAY,CITY.BEND));
 
         /**
          * Card face up and down deck
@@ -192,7 +227,6 @@ public class TTRGameState{
 
 
         //create tickets
-        ticketDeck.add(new Ticket(0,"Portland","Salem"));
 
     }
 
@@ -229,7 +263,51 @@ public class TTRGameState{
 
 
     public String toString(){
-        return "hi";
+        String output = "";
+        //strings for the paths
+        output += "length\tnode0\tnode1\tpath color\tpath owner\n";
+        for(Path current: allPaths) {
+            output += current.getLength() + "\t";
+            output += current.getNode0().name() + "\t";
+            output += current.getNode1().name() + "\t";
+            output += current.getPathColor().name() + "\t";
+            output += current.getPathOwner() + "\t\n";
+        }
+
+        //strings for the tickets
+        output += "is complete\tpoint value\tnode0\tnode1\n";
+        for(Ticket current: ticketDeck){
+            output += current.getIsComplete() + "\t";
+            output += current.getPointValue() + "\t";
+            output += current.getNode0().name() + "\t";
+            output += current.getNode1().name() + "\t\n";
+        }
+
+        //strings for the players
+        output += "player name\ttrains left\n";
+        for(Player current: allPlayers) {
+            output += current.getName() + "\t";
+            output += current.getNumTrains() + "\t\n";
+
+            //string for players tickets
+            output += "TICKETS:\t";
+            for (Ticket tik : current.getTickets()) {
+                output += tik.getIsComplete() + "\t";
+                output += tik.getPointValue() + "\t";
+                output += tik.getNode0().name() + "\t";
+                output += tik.getNode1().name() + "\t";
+            }
+            output += "\n";
+
+            //string for players cards
+            output += "CARDS:\t";
+            for(CARD card:current.getCardHand()){
+                output += card.name() + "\t";
+            }
+            output += "\n";
+        }
+
+        return output;
     }
 
 

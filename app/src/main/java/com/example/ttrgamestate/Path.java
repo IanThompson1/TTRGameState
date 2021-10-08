@@ -28,19 +28,36 @@ public class Path {
 
     }
 
-    public int getPathOwner() {
-        return pathOwner;
+    //copy constructor
+    public Path(Path p){
+        this.length = p.length;
+        this.node0 = p.node0;
+        this.node1 = p.node1;
+        this.pathColor = p.pathColor;
+        this.pathOwner = p.pathOwner;
     }
 
-    public COLOR getPathColor() {
-        return pathColor;
-    }
-
-    public int getLength() {
+    public int getLength(){
         return length;
     }
 
+    public TTRGameState.CITY getNode0(){
+        return node0;
+    }
+
+    public TTRGameState.CITY getNode1(){
+        return node1;
+    }
+
+    public COLOR getPathColor(){
+        return pathColor;
+    }
+
+    public int getPathOwner(){
+        return pathOwner;
+    }
     public void setPathOwner(int owner){
         pathOwner = owner;
     }
+
 }

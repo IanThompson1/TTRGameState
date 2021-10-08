@@ -5,26 +5,48 @@ import java.util.ArrayList;
 public class Player {
 
 
-    public enum OWNER {
-        REDPLAYER,
-        GREENPLAYER,
-        YELLOWPLAYER,
-        BLUEPLAYER,
-    }
+//    public enum OWNER{
+//        REDPLAYER,
+//        GREENPLAYER,
+//        YELLOWPLAYER,
+//        BLUEPLAYER,
+//    }
 
     private int numTrains;
     private ArrayList<TTRGameState.CARD> cardHand;
     private ArrayList<Ticket> tickets;
-    private int color;  //name
+    private int name;  //name
 
 
-
-    public Player(int playerNum) {
-        color = playerNum;
+    public Player(int playerNum, ArrayList<TTRGameState.CARD> cards, ArrayList<Ticket> tickets, int trains){
+        name = playerNum;
+        cardHand = cards;
+        this.tickets = tickets;
+        numTrains = trains;
     }
 
-    public ArrayList<TTRGameState.CARD> getCardHand() {
+    //Copy constructor
+    public Player(Player p){
+        this.name = p.name;
+        this.cardHand = p.cardHand;
+        this.tickets = p.tickets;
+        this.numTrains = p.numTrains;
+    }
+
+    public int getNumTrains(){
+        return numTrains;
+    }
+
+    public int getName(){
+        return name;
+    }
+
+    public ArrayList<TTRGameState.CARD> getCardHand(){
         return cardHand;
+    }
+
+    public ArrayList<Ticket> getTickets(){
+        return tickets;
     }
 
     public void addCardHand(TTRGameState.CARD card) {
@@ -39,9 +61,6 @@ public class Player {
         tickets.add(ticket);
     }
 
-    public int getColor() {
-        return color;
-    }
 
     public int getOrangeCards() {
         int orangeCards = 0;
@@ -91,10 +110,6 @@ public class Player {
             }
         }
         return wildCards;
-    }
-
-    public int getNumTrains() {
-        return numTrains;
     }
 
 

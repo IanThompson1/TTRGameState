@@ -2,6 +2,7 @@ package com.example.ttrgamestate;
 
 import java.util.ArrayList;
 
+//ticket to ride actions implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 public class TTRGameAction {
 
 
@@ -9,7 +10,7 @@ public class TTRGameAction {
 
     public boolean placeTrains(Player player, Path path, int wilds, TTRGameState.CARD card){
         int len = path.getLength();
-        int owner = player.getColor();
+        int owner = player.getName();
         if(wilds > player.getWildCards()){
             return false;
         }
@@ -156,34 +157,6 @@ public class TTRGameAction {
 
 
         return false;
-    }
-
-    public boolean drawTickets(TTRGameState gameState, Player player){
-        if(gameState.ticketDeckEmpty()){
-            return false;
-        } else {
-            Ticket[] ticket = gameState.getTickets();
-            for (int i = 0; i < 3; i++) {
-                player.addTicket(ticket[i]);
-            }
-            return true;
-        }
-    }
-
-    public boolean drawCards(TTRGameState gameState, Player player, TTRGameState.CARD c, TTRGameState.CARD c1){
-        ArrayList<TTRGameState.CARD> deck = gameState.getCardDeck();
-        if(deck.isEmpty()){
-            return false;
-        } else{
-            deck.remove(c);
-            deck.remove(c1);
-            player.addCardHand(c);
-            player.addCardHand(c1);
-            gameState.setCardDeck(deck);
-            return true;
-
-        }
-
     }
 
 }
