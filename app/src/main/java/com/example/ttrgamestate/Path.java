@@ -28,6 +28,15 @@ public class Path {
 
     }
 
+    //copy constructor
+    public Path(Path p){
+        this.length = p.length;
+        this.node0 = p.node0;
+        this.node1 = p.node1;
+        this.pathColor = p.pathColor;
+        this.pathOwner = p.pathOwner;
+    }
+
     public int getLength(){
         return length;
     }

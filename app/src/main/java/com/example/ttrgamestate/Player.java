@@ -25,6 +25,14 @@ public class Player {
         numTrains = trains;
     }
 
+    //Copy constructor
+    public Player(Player p){
+        this.name = p.name;
+        this.cardHand = p.cardHand;
+        this.tickets = p.tickets;
+        this.numTrains = p.numTrains;
+    }
+
     public int getNumTrains(){
         return numTrains;
     }

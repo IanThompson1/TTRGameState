@@ -14,6 +14,13 @@ public class Ticket {
         node1 = n1;
     }
 
+    public Ticket(Ticket t){
+        this.isComplete = t.isComplete;
+        this.PointValue = t.PointValue;
+        this.node0 = t.node0;
+        this.node1 = t.node1;
+    }
+
     public boolean getIsComplete(){
         return isComplete;
     }
