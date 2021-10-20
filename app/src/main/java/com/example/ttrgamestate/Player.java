@@ -1,6 +1,6 @@
 package com.example.ttrgamestate;
 import java.util.ArrayList;
-//player class implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
+
 
 public class Player {
 
@@ -10,11 +10,11 @@ public class Player {
     private int name;  //name
 
 
-    public Player(int playerNum, ArrayList<TTRGameState.CARD> cards, ArrayList<Ticket> tickets, int trains){
+    public Player(int playerNum){
         name = playerNum;
-        cardHand = cards;
-        this.tickets = tickets;
-        numTrains = trains;
+        cardHand = new ArrayList<TTRGameState.CARD>();
+        this.tickets = new ArrayList<Ticket>();
+        numTrains = 20;
     }
 
     //Copy constructor
@@ -40,5 +40,69 @@ public class Player {
     public ArrayList<Ticket> getTickets(){
         return tickets;
     }
+
+    public void addCardHand(TTRGameState.CARD card) {
+        cardHand.add(card);
+    }
+
+    public void removeCardHand(TTRGameState.CARD card){
+        cardHand.remove(card);
+    }
+
+    public void addTicket(Ticket ticket) {
+        tickets.add(ticket);
+    }
+
+
+    public int getOrangeCards() {
+        int orangeCards = 0;
+        for(int i = 0; i < cardHand.size(); i++){
+            if(cardHand.get(i) == TTRGameState.CARD.ORANGECARD){
+                orangeCards++;
+            }
+        }
+        return orangeCards;
+    }
+
+    public int getBlackCards() {
+        int blackCards = 0;
+        for(int i = 0; i < cardHand.size(); i++){
+            if(cardHand.get(i) == TTRGameState.CARD.BLACKCARD){
+                blackCards++;
+            }
+        }
+        return blackCards;
+    }
+
+    public int getPinkCards() {
+        int pinkCards = 0;
+        for(int i = 0; i < cardHand.size(); i++){
+            if(cardHand.get(i) == TTRGameState.CARD.PINKCARD){
+                pinkCards++;
+            }
+        }
+        return pinkCards;
+    }
+
+    public int getWhiteCards() {
+        int whiteCards = 0;
+        for(int i = 0; i < cardHand.size(); i++){
+            if(cardHand.get(i) == TTRGameState.CARD.WHITECARD){
+                whiteCards++;
+            }
+        }
+        return whiteCards;
+    }
+
+    public int getWildCards() {
+        int wildCards = 0;
+        for(int i = 0; i < cardHand.size(); i++){
+            if(cardHand.get(i) == TTRGameState.CARD.WILDCARD){
+                wildCards++;
+            }
+        }
+        return wildCards;
+    }
+
 
 }
