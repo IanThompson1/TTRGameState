@@ -246,23 +246,23 @@ public class TTRGameState{
     public String toString(){
         String output = "";
         //strings for the paths
-        output += "length\tnode0\tnode1\tpath color\tpath owner\n";
-        for(Path current: allPaths) {
-            output += current.getLength() + "\t";
-            output += current.getNode0().name() + "\t";
-            output += current.getNode1().name() + "\t";
-            output += current.getPathColor().name() + "\t";
-            output += current.getPathOwner() + "\t\n";
-        }
-
-        //strings for the tickets
-        output += "is complete\tpoint value\tnode0\tnode1\n";
-        for(Ticket current: ticketDeck){
-            output += current.getIsComplete() + "\t";
-            output += current.getPointValue() + "\t";
-            output += current.getNode0().name() + "\t";
-            output += current.getNode1().name() + "\t\n";
-        }
+//        output += "length\tnode0\tnode1\tpath color\tpath owner\n";
+//        for(Path current: allPaths) {
+//            output += current.getLength() + "\t";
+//            output += current.getNode0().name() + "\t";
+//            output += current.getNode1().name() + "\t";
+//            output += current.getPathColor().name() + "\t";
+//            output += current.getPathOwner() + "\t\n";
+//        }
+//
+//        //strings for the tickets
+//        output += "is complete\tpoint value\tnode0\tnode1\n";
+//        for(Ticket current: ticketDeck){
+//            output += current.getIsComplete() + "\t";
+//            output += current.getPointValue() + "\t";
+//            output += current.getNode0().name() + "\t";
+//            output += current.getNode1().name() + "\t\n";
+//        }
 
         //strings for the players
         output += "player name\ttrains left\n";

@@ -13,16 +13,12 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <EditText
-            android:id="@+id/output"
+        <TextView
+            android:id="@+id/texts"
             android:layout_width="match_parent"
-            android:layout_height="526dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:lines="3"
+            android:layout_height="531dp"
             android:text="test"
-            android:textSize="30dp" />
+            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,6 +37,7 @@
                 android:layout_weight="1"
                 android:text="runTest"
                 android:textSize="20dp" />
+
         </LinearLayout>
 
         <com.example.ttrgamestate.TTRHumanPlayer
