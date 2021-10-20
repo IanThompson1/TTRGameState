@@ -36,14 +36,6 @@ public class TTRGameState{
 
     private ArrayList<Path> allPaths;
     private ArrayList<Player> allPlayers;
-    private ArrayList<CARD> cards0;
-    private ArrayList<CARD> cards1;
-    private ArrayList<CARD> cards2;
-    private ArrayList<CARD> cards3;
-    private ArrayList<Ticket> tickets0;
-    private ArrayList<Ticket> tickets1;
-    private ArrayList<Ticket> tickets2;
-    private ArrayList<Ticket> tickets3;
 
     private ArrayList<CARD> cardDeck;
     private ArrayList<CARD> faceUp;
@@ -158,24 +150,16 @@ public class TTRGameState{
          * Player(playerNum)
          */
         allPlayers = new ArrayList<Player>();
-        cards0 = new ArrayList<CARD>();
-        cards1 = new ArrayList<CARD>();
-        tickets0 = new ArrayList<Ticket>();
-        tickets1 = new ArrayList<Ticket>();
 
-        allPlayers.add(new Player(0, cards0, tickets0,20));
-        allPlayers.add(new Player(1, cards1, tickets1, 20));
+        allPlayers.add(new Player(0));
+        allPlayers.add(new Player(1));
 
         if (numPlayers > 2){
-            //3 players
-            cards2 = new ArrayList<CARD>();
-            tickets2 = new ArrayList<Ticket>();
-            allPlayers.add(new Player(2, cards2, tickets2,20));
+            //three players
+            allPlayers.add(new Player(2));
             if (numPlayers == 4){
                 //four players
-                cards3 = new ArrayList<CARD>();
-                tickets3 = new ArrayList<Ticket>();
-                allPlayers.add(new Player(3, cards3, tickets3, 20));
+                allPlayers.add(new Player(3));
             }
         }
 

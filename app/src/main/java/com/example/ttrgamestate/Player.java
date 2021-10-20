@@ -18,11 +18,11 @@ public class Player {
     private int name;  //name
 
 
-    public Player(int playerNum, ArrayList<TTRGameState.CARD> cards, ArrayList<Ticket> tickets, int trains){
+    public Player(int playerNum){
         name = playerNum;
-        cardHand = cards;
-        this.tickets = tickets;
-        numTrains = trains;
+        cardHand = new ArrayList<TTRGameState.CARD>();
+        this.tickets = new ArrayList<Ticket>();
+        numTrains = 20;
     }
 
     //Copy constructor
