@@ -225,9 +225,6 @@ public class TTRGameState{
             cardDeck.remove(0);
         }
 
-
-        //create tickets
-
     }
 
     public TTRGameState(TTRGameState other){
