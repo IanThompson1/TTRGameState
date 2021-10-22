@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView text = (TextView) findViewById(R.id.texts);
+        EditText text = (EditText) findViewById(R.id.test);
         TTRHumanPlayer view = (TTRHumanPlayer) findViewById(R.id.tacos);
         Button runTest = (Button) findViewById(R.id.runTest);
         TTRLocalGame local = new TTRLocalGame(view);
