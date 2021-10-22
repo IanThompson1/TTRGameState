@@ -214,7 +214,24 @@ public class TTRGameState{
     public TTRGameState(TTRGameState other){
         //copies everything
         // same number of :new's
+        this.whosTurn = other.whosTurn;
 
+        this.allPaths = new ArrayList<Path>(other.allPaths.size());
+        this.allPaths.addAll(other.allPaths);
+
+        this.allPlayers = new ArrayList<Player>(other.allPlayers.size());
+        this.allPlayers.addAll(other.allPlayers);
+
+        this.cardDeck = new ArrayList<CARD>(other.cardDeck.size());
+        this.cardDeck.addAll(other.cardDeck);
+
+        this.faceUp = new ArrayList<CARD>(other.faceUp.size());
+        this.faceUp.addAll(other.faceUp);
+
+        this.ticketDeck = new ArrayList<Ticket>(other.ticketDeck.size());
+        this.ticketDeck.addAll(other.ticketDeck);
+
+        this.numPlayers = other.numPlayers;
     }
 
     //getter method for cardDeck
