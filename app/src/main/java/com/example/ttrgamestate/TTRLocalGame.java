@@ -21,6 +21,12 @@ public class TTRLocalGame implements View.OnClickListener{
         if(view.getId() == R.id.runTest){
             TTRGameState firstInstance = new TTRGameState(4);
             testing.setText(firstInstance.toString());
+            TTRGameState secondInstance = new TTRGameState(firstInstance);
+            TTRGameState thirdInstance = new TTRGameState(4);
+            TTRGameAction actions = new TTRGameAction();
+//            actions.placeTrains(firstInstance.);
+//            actions.
+
         }
     }
 }
