@@ -20,8 +20,17 @@ public class Player {
     //Copy constructor
     public Player(Player p){
         this.name = p.name;
-        this.cardHand = p.cardHand;
-        this.tickets = p.tickets;
+
+        this.cardHand = new ArrayList<TTRGameState.CARD>(p.cardHand.size());
+        for(TTRGameState.CARD c: p.cardHand){
+            this.cardHand.add(c);
+        }
+
+        this.tickets = new ArrayList<Ticket>(p.tickets.size());
+        for(Ticket t: p.tickets){
+            this.tickets.add(t);
+        }
+
         this.numTrains = p.numTrains;
     }
 
