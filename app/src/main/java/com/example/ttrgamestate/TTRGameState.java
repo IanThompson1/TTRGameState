@@ -278,6 +278,7 @@ public class TTRGameState{
         return tickets;
     }
 
+
     //check if the ticket desk is empty
     public boolean ticketDeckEmpty(){
         return ticketDeck.isEmpty();
@@ -333,5 +334,14 @@ public class TTRGameState{
         return output;
     }
 
+    //for the actions
+    public Player getPlayer1() {
+        return allPlayers.get(0);
+    }
 
+    //for the place train action
+    public Path getPath(){
+        Path path= allPaths.get(1);
+        return path;
+    }
 }

@@ -1,12 +1,46 @@
 package com.example.ttrgamestate;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 //ticket to ride actions implemented by Ian Thompson, Bruce Baird, Trent Matsushima, and Jennifer Brana
 public class TTRGameAction {
 
+    public TTRGameAction(){
+
+    }
 
 
+
+
+    public boolean drawTrain(Player player, TTRGameState.CARD card, TTRGameState.CARD card1, TTRGameState state){
+
+        if(state.getCardDeck().isEmpty()){
+            return false;
+        } else {
+            ArrayList<TTRGameState.CARD> deck = state.getCardDeck();
+            player.addCardHand(card);
+            player.addCardHand(card1);
+            deck.remove(card);
+            deck.remove(card1);
+            state.setCardDeck(deck);
+            return true;
+        }
+
+    }
+
+    public boolean drawTicket(Player player, TTRGameState state){
+        if(state.ticketDeckEmpty()){
+            return false;
+        } else {
+            Random rand = new Random();
+            Ticket[] deck = state.getTickets();
+            for(int i = 0; i < deck.length; i++){
+                player.addTicket(deck[i]);
+            }
+            return true;
+        }
+    }
 
     public boolean placeTrains(Player player, Path path, int wilds, TTRGameState.CARD card){
         int len = path.getLength();

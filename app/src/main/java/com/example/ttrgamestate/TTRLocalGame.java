@@ -19,13 +19,35 @@ public class TTRLocalGame implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.runTest){
+            //a new instance of a game state class with a default constructor
             TTRGameState firstInstance = new TTRGameState(4);
+            //prints out firstInstance to the EditText
             testing.setText(firstInstance.toString());
+            //creates a deep copy of firstInstance
+            //and assigns it to a var named secondInstance
             TTRGameState secondInstance = new TTRGameState(firstInstance);
-            TTRGameState thirdInstance = new TTRGameState(4);
             TTRGameAction actions = new TTRGameAction();
-//            actions.placeTrains(firstInstance.);
-//            actions.
+            //using firstInstance we will test our game
+            //by playing over three moves
+            actions.drawTrain(firstInstance.getPlayer1(), TTRGameState.CARD.ORANGECARD, TTRGameState.CARD.WILDCARD, firstInstance);
+            //then append the updated game state after every action
+            testing.append("draw train action\n");
+            testing.append(firstInstance.toString());
+            actions.placeTrains(firstInstance.getPlayer1(), firstInstance.getPath(), 1 , TTRGameState.CARD.ORANGECARD);
+            testing.append("place train action\n");
+            testing.append(firstInstance.toString());
+            actions.drawTicket(firstInstance.getPlayer1(), firstInstance);
+            testing.append("draw ticket action\n");
+            testing.append(firstInstance.toString());
+            //create a new instance of the game state using default constructor
+            TTRGameState thirdInstance = new TTRGameState(4);
+            //This will append both secondInstance and thirdInstance game states
+            //if done correctly the two Strings should be identitcal.
+            testing.append("Second Instance\n");
+            testing.append(secondInstance.toString());
+            testing.append("Third Instance\n");
+            testing.append(thirdInstance.toString());
+
 
         }
     }
