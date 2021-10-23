@@ -2,6 +2,7 @@ package com.example.ttrgamestate;
 
 public class Path {
 
+    //ENUM representing the possible path colors
     public enum COLOR{
         PINKPATH,
         ORANGEPATH,
@@ -19,6 +20,7 @@ public class Path {
     private int pathOwner;//NUMBER
 
 
+    //Path constructor
     public Path(int length, TTRGameState.CITY node0, TTRGameState.CITY node1, COLOR col, int owner){
         this.length = length;
         this.node0 = node0;
@@ -28,7 +30,7 @@ public class Path {
 
     }
 
-    //copy constructor
+    //Path copy constructor
     public Path(Path p){
         this.length = p.length;
         this.node0 = p.node0;
@@ -37,25 +39,32 @@ public class Path {
         this.pathOwner = p.pathOwner;
     }
 
+    //method to get the length of a path
     public int getLength(){
         return length;
     }
 
+    //method to get the first city on the path
     public TTRGameState.CITY getNode0(){
         return node0;
     }
 
+    //method to get the second city on the path
     public TTRGameState.CITY getNode1(){
         return node1;
     }
 
+    //method to get the color of the path
     public COLOR getPathColor(){
         return pathColor;
     }
 
+    //method to get the name of the player that owns the path
     public int getPathOwner(){
         return pathOwner;
     }
+
+    //method to set the pathOwner
     public void setPathOwner(int owner){
         pathOwner = owner;
     }
