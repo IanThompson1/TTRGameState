@@ -211,25 +211,48 @@ public class TTRGameState{
 
     }
 
+    /** copy constructor for TTRGameState
+     *
+     * @param other TTRGameState being copied
+     */
     public TTRGameState(TTRGameState other){
         //copies everything
         // same number of :new's
         this.whosTurn = other.whosTurn;
 
+        //creates a new ArrayList for the copied allPaths
         this.allPaths = new ArrayList<Path>(other.allPaths.size());
-        this.allPaths.addAll(other.allPaths);
 
+        //for every path in the old allPaths, create a new path and add it to the new TTRGameState
+        for(Path p: other.allPaths){
+            this.allPaths.add(new Path(p));
+        }
+
+        //creates a new ArrayList for the copied allPlayers
         this.allPlayers = new ArrayList<Player>(other.allPlayers.size());
-        this.allPlayers.addAll(other.allPlayers);
 
+        //for every player in the old allPlayers, create a new player and add it to the new TTRGameState
+        for(Player p: other.allPlayers){
+            this.allPlayers.add(new Player(p));
+        }
+
+        //creates a new ArrayList for the copied cardDeck
         this.cardDeck = new ArrayList<CARD>(other.cardDeck.size());
+
+        //populates new cardDeck
         this.cardDeck.addAll(other.cardDeck);
 
+        //creates a new ArrayList for the copied faceUp
         this.faceUp = new ArrayList<CARD>(other.faceUp.size());
         this.faceUp.addAll(other.faceUp);
 
+        //creates a new ArrayList for the copied faceUp
         this.ticketDeck = new ArrayList<Ticket>(other.ticketDeck.size());
-        this.ticketDeck.addAll(other.ticketDeck);
+
+        //for every ticket in the old ticketDeck, create a new ticket and add it to the new TTRGameState
+        for(Ticket t: other.ticketDeck){
+            this.ticketDeck.add(new Ticket(t));
+        }
 
         this.numPlayers = other.numPlayers;
     }
@@ -245,6 +268,7 @@ public class TTRGameState{
         cardDeck.addAll(cardDeck1);
     }
 
+    //method that allows players to get tickets.
     public Ticket[] getTickets(){
         Ticket[] tickets = new Ticket[3];
         for(int i = 0; i < 3; i++){
@@ -254,12 +278,13 @@ public class TTRGameState{
         return tickets;
     }
 
+    //check if the ticket desk is empty
     public boolean ticketDeckEmpty(){
         return ticketDeck.isEmpty();
     }
 
 
-
+    //toString method to display TTRGameState information
     public String toString(){
         String output = "";
         //strings for the paths
